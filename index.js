@@ -21,6 +21,7 @@ convertBtn.addEventListener('click', () =>{
             input.value = ''
         }else{
             alert('error! please input only numbers')
+            input.value = ''
         }
         
     }
