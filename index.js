@@ -17,6 +17,7 @@ convertBtn.addEventListener('click', () =>{
         if (numberToConvert ){
             lengthConverter(numberToConvert)
             volumeConverter(numberToConvert)
+            massConverter(numberToConvert)
             input.value = ''
         }else{
             alert('error! please input only numbers')
@@ -36,4 +37,10 @@ const volumeConverter = (num) => {
     const litersToGallons = (num * 0.264).toFixed(3)
     const gallonToLiters =( num / 0.264).toFixed(3)
     showVolume.innerText = `${num} liters = ${litersToGallons} gallons | ${num} gallons = ${gallonToLiters} liters`
+}
+
+const massConverter = (num) =>{
+    const kilosToPounds = (num * 2.204).toFixed(3)
+    const poundsToKilos =( num / 2.204).toFixed(3)
+    showMass.innerText = `${num} kilos = ${kilosToPounds} pounds | ${num} pounds = ${poundsToKilos} kilos`
 }
