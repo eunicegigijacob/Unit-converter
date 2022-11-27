@@ -14,8 +14,14 @@ const showMass = document.getElementById('mass');
 convertBtn.addEventListener('click', () =>{
     if (input.value != ''){
         const numberToConvert = Number(input.value)
-        lengthConverter(numberToConvert);
-
+        if (numberToConvert ){
+            lengthConverter(numberToConvert)
+            volumeConverter(numberToConvert)
+            input.value = ''
+        }else{
+            alert('error! please input only numbers')
+        }
+        
     }
 })
 
@@ -23,5 +29,11 @@ convertBtn.addEventListener('click', () =>{
 const lengthConverter = (num) =>{
     const lengthToFeet = (num * 3.281).toFixed(3)
     const lengthToMeter =( num / 3.281).toFixed(3)
-    showLength.innerText = `${num} Meters = ${lengthToFeet} feet | ${num} feet = ${lengthToMeter} meters`
+    showLength.innerText = `${num} meters = ${lengthToFeet} feet | ${num} feet = ${lengthToMeter} meters`
 };
+
+const volumeConverter = (num) => {
+    const litersToGallons = (num * 0.264).toFixed(3)
+    const gallonToLiters =( num / 0.264).toFixed(3)
+    showVolume.innerText = `${num} liters = ${litersToGallons} gallons | ${num} gallons = ${gallonToLiters} liters`
+}
